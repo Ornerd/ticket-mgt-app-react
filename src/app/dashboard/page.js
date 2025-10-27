@@ -79,12 +79,7 @@ export default function Dashboard() {
             <p className="text-gray-600 mt-1">Welcome to your dashboard</p>
           </div>
           <div className="space-x-4">
-            <Link 
-              href="/tickets"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 inline-block"
-            >
-              Manage Tickets
-            </Link>
+          
             <button 
               onClick={handleLogout}
               className="bg-red-950 text-white px-4 py-2 rounded-lg hover:bg-gray-700"
@@ -104,6 +99,16 @@ export default function Dashboard() {
               <h3 className="text-lg font-semibold text-gray-900">{stat.label}</h3>
             </div>
           ))}
+        </div>
+
+        {/* cta- manage tickets*/}
+        <div class="mb-8 flex items-center justify-end">
+              <Link 
+              href="/tickets"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 inline-block"
+            >
+              Manage Tickets
+            </Link>
         </div>
 
         {/* Recent Activity */}

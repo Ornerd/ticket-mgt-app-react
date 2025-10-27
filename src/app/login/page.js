@@ -54,7 +54,7 @@ export default function Login() {
           </div>
            
 
-          <h2 className="text-3xl font-bold text-center mb-8">Login to Ortal</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Login to Ortel</h2>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
