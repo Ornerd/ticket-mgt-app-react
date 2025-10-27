@@ -212,7 +212,7 @@ const initialTickets = [
             <div className="grid gap-4">
               {/* Added slice.reverse mthothds to ensure that newer tickets appear above in the list, while preserving the original ticket data */}
               {tickets.slice().reverse().map((ticket) => (
-                <div key={ticket.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <div key={ticket.id} className={`border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow ${ticket.status === 'open'? "bg-green-200" : ticket.status === 'in_progress'? "bg-amber-200" : "bg-gray-200" }`}>
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-lg font-semibold">{ticket.title}</h3>
                     <div className="flex space-x-2">
@@ -271,8 +271,9 @@ function CreateTicketForm({ onSave, onCancel }) {
     e.preventDefault()
     const newErrors = {}
 
-    if (!formData.title.trim()) newErrors.title = 'Title is required'
-    if (!formData.status) newErrors.status = 'Status is required'
+    if (!formData.title.trim()) newErrors.title = 'Your Ticket needs a title'
+    if (formData.description.length < 7) newErrors.description = 'Description should be atleast 7 chrarcters long'
+    if (!formData.status) newErrors.status = 'Your Ticket needs a status'
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
@@ -307,6 +308,7 @@ function CreateTicketForm({ onSave, onCancel }) {
             rows={3}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           />
+          {errors.description && <p className="mt-1 text-sm text-red-600">{errors.description}</p>}
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -379,7 +381,7 @@ function EditTicketForm({ ticket, onSave, onCancel }) {
   }
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg mb-6">
+    <div className="bg-white p-6 rounded-xl shadow-lg mb-6 fixed ">
       <h3 className="text-xl font-semibold mb-4">Edit Ticket</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
