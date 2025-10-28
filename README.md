@@ -13,7 +13,6 @@ A modern, responsive ticket management system built with React and Next.js.
 ## Tech Stack
 - **Framework**: Next.js 14 with App Router
 - **Styling**: Tailwind CSS
-- **Icons**: Lucide React
 - **Font**: Poppins
 
 ## Getting Started
@@ -25,8 +24,8 @@ A modern, responsive ticket management system built with React and Next.js.
 ### Installation
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd ticket-app
+git clone https://github.com/Ornerd/ticket-mgt-app-react.git
+cd ticket-mgt-app-react
 
 # Install dependencies
 npm install
