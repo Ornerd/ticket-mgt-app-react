@@ -1,4 +1,4 @@
-# Ortel - Ticket Management System (React/Next.js)
+# Ortel - Ticket Management System
 
 A modern, responsive ticket management system built with React and Next.js.
 
