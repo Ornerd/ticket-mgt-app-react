@@ -32,3 +32,12 @@ npm install
 
 # Run development server
 npm run dev
+```
+
+## Demo Credentials
+Use these credentials to test the application upon login:
+
+- Email: test@test.com
+- Password: 1234567
+
+You can use any name and email for the signup page.
